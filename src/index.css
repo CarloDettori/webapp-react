@@ -1,0 +1,39 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header a:hover {
+  color: #1ca9eb !important;
+
+}
+
+main {
+  padding: 120px 20px 10px;
+}
+
+header {
+  height: 75px;
+  position: fixed;
+  width: 100%;
+}
+
+footer {
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 30px;
+  text-align: center;
+}
+
+#sideBar {
+  margin-top: 75px;
+  margin-bottom: 100px;
+  position: fixed;
+  left: 0;
+  height: 100%;
+  width: 200px;
+}
