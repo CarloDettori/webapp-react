@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: grey;
+  background-color: #3d3d3d;
   color: white
 }
 
@@ -25,6 +25,28 @@ main {
   display: none;
 }
 
+
+
+.overlay {
+  padding: 15px;
+  color: white;
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  cursor: pointer;
+}
+
+.card:hover .overlay {
+  display: block;
+}
+
 header {
   height: 75px;
   position: fixed;
@@ -39,6 +61,7 @@ footer {
   bottom: 0;
   padding: 30px;
   text-align: center;
+  z-index: 3000;
 }
 
 #sideBar {

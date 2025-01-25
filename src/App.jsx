@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { GlobalProvider } from "./context/GlobalContext";
 
 function App() {
   const [moviesList, setMovieList] = useState([])
@@ -27,15 +28,19 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<DefaultLayout />}>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/aboutus" element={<AboutUsPage />} />
-          </Route >
-        </Routes>
-      </BrowserRouter>
+      <GlobalProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<DefaultLayout />}>
+
+              <Route path="/" element={<HomePage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/aboutus" element={<AboutUsPage />} />
+
+            </Route >
+          </Routes>
+        </BrowserRouter>
+      </GlobalProvider>
     </>
   )
 }
