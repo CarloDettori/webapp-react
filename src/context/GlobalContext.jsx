@@ -6,8 +6,8 @@ import axios from "axios";
 const GlobalContext = createContext();
 
 const GlobalProvider = ({ children }) => {
-    const [moviesList, setMovieList] = useState([])
-    const [reviewsList, setReviewList] = useState([])
+    const [movieList, setMovieList] = useState([])
+    const [reviewList, setReviewList] = useState([])
 
     useEffect(() => {
         getData()
@@ -24,7 +24,7 @@ const GlobalProvider = ({ children }) => {
 
     return (
 
-        <GlobalContext.Provider value={{ moviesList }} >
+        <GlobalContext.Provider value={{ movieList }} >
             {children}
         </GlobalContext.Provider>
 

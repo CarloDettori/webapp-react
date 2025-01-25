@@ -3,13 +3,13 @@ import { GlobalContext } from "../context/GlobalContext"
 import { useContext } from "react"
 
 export default function HomePage() {
-    const { moviesList } = useContext(GlobalContext)
+    const { movieList } = useContext(GlobalContext)
 
 
     return (
         <main>
             <div className="row">
-                {moviesList.map((el) => {
+                {movieList.map((el) => {
                     return <CardComponent key={el.id} data={el} />
                 })}
             </div>
