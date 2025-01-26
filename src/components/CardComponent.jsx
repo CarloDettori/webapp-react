@@ -13,7 +13,7 @@ export default function CardComponent({ data }) {
                 <div className="overlay">
                     <h4>{data.title}</h4> <p>{data.release_year}</p>
                     <p>{data.director}</p>
-                    <Link className="btn btn-primary link text-white" to="/:id">Dettails</Link>
+                    <Link className="btn btn-primary link text-white" to="/{data.id}">Details</Link>
                 </div>
 
             </div>

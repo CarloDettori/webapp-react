@@ -8,7 +8,7 @@ export default function MoviePage({ data }) {
 
             <div className="card d-flex">
                 <img src={data.image} alt="" />
-                <div className="overlay">
+                <div>
                     <h4>{data.title}</h4> <p>{data.release_year}</p>
                     <p>{data.director}</p>
 
