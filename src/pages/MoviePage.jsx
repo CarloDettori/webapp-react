@@ -1,19 +1,35 @@
-export default function MoviePage({ data }) {
 
-    const { movieList } = useContext(GlobalContext)
+import axios from "axios"
+import { useEffect } from "react"
+import { useParams } from "react-router-dom"
+import { useState } from "react"
+export default function MoviePage() {
+    const [oneMovie, setOneMovie] = useState([])
+    const { id } = useParams()
+
+    function getOneMovieData() {
+
+        axios
+            .get(`http://localhost:3000/movies/${id}`)
+            .then((res) => {
+                //console.log(res.data.items)
+                setOneMovie(res.data.items)
+            })
+    }
+    useEffect(getOneMovieData, [])
 
     return (
 
         <div className="col-2">
 
             <div className="card d-flex">
-                <img src={data.image} alt="" />
+                <img src={oneMovie.image} alt="" />
                 <div>
-                    <h4>{data.title}</h4> <p>{data.release_year}</p>
-                    <p>{data.director}</p>
+                    <h4>{oneMovie.title}</h4> <p>{oneMovie.release_year}</p>
+                    <p>{oneMovie.director}</p>
 
-                    <p>{data.abstract}</p>
-                    <p>{data.genere}</p>
+                    <p>{oneMovie.abstract}</p>
+                    <p>{oneMovie.genere}</p>
                 </div>
             </div>
 

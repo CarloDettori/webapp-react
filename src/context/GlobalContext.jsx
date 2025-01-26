@@ -9,12 +9,8 @@ const GlobalContext = createContext();
 const GlobalProvider = ({ children }) => {
     const [movieList, setMovieList] = useState([])
     const [reviewList, setReviewList] = useState([])
-    const [oneMovie, setOneMovie] = useState([])
 
-    useEffect(() => {
-        getMovieListData()
 
-    }, [])
 
     function getMovieListData() {
         axios
@@ -24,20 +20,15 @@ const GlobalProvider = ({ children }) => {
                 setMovieList(res.data.items)
             })
     }
-    const { id } = useParams
 
-    function getOneMovieData() {
-        axios
-            .get(`http://localhost:3000/movies/${id}`)
-            .then((res) => {
-                //console.log(res.data.items)
-                setOneMovie(res.data.items)
-            })
-    }
+    useEffect(() => {
+        getMovieListData()
+
+    }, [])
 
     return (
 
-        <GlobalContext.Provider value={{ movieList, reviewList, oneMovie }} >
+        <GlobalContext.Provider value={{ movieList, reviewList }} >
             {children}
         </GlobalContext.Provider>
 

@@ -6,10 +6,9 @@ import HomePage from "./pages/HomePage";
 import MoviePage from "./pages/MoviePage";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { GlobalContext, GlobalProvider } from "./context/GlobalContext";
-//import { useContext } from "react";
+import { useContext } from "react";
 
 function App() {
-
 
 
   return (
@@ -18,8 +17,9 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route element={<DefaultLayout />}>
-              <Route path="/" element={<HomePage />}>
-                <Route path="/:id" element={<MoviePage />} />
+              <Route path="/">
+                <Route index element={<HomePage />} />
+                <Route path=":id" element={<MoviePage />} />
               </Route>
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/aboutus" element={<AboutUsPage />} />
