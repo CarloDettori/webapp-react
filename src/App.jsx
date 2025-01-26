@@ -3,6 +3,7 @@ import DefaultLayout from "./pages/DefaultLayout";
 import AboutUsPage from "./pages/AboutUsPage";
 import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
+import MoviePage from "./pages/MoviePage";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -33,7 +34,10 @@ function App() {
           <Routes>
             <Route element={<DefaultLayout />}>
 
-              <Route path="/" element={<HomePage />} />
+              <Route path="/" element={<HomePage />}>
+                <Route path=":id" element={<MoviePage />} />
+
+              </Route>
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/aboutus" element={<AboutUsPage />} />
 

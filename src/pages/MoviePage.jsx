@@ -1,21 +1,20 @@
-import { Link } from "react-router-dom";
+export default function MoviePage({ data }) {
 
-export default function CardComponent({ data }) {
-
-
+    const { movieList } = useContext(GlobalContext)
 
     return (
 
         <div className="col-2">
 
-            <div className="card">
+            <div className="card d-flex">
                 <img src={data.image} alt="" />
                 <div className="overlay">
                     <h4>{data.title}</h4> <p>{data.release_year}</p>
                     <p>{data.director}</p>
-                    <Link className="btn btn-primary link text-white" to="/:id">Dettails</Link>
-                </div>
 
+                    <p>{data.abstract}</p>
+                    <p>{data.genere}</p>
+                </div>
             </div>
 
             {/* <div className="card" >
@@ -29,5 +28,3 @@ export default function CardComponent({ data }) {
         </div>
     )
 }
-
-{/*  */ }
