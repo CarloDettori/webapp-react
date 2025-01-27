@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom"
 
 export default function MoviePage() {
     const [oneMovie, setOneMovie] = useState([])
-    const { id } = useParams()
+    const { id } = useParams();
 
     function getOneMovieData() {
 
@@ -13,13 +13,13 @@ export default function MoviePage() {
             .get(`http://localhost:3000/movies/${id}`)
             .then((res) => {
                 //console.log(res.data.items)
-                setOneMovie(res.data.items)
-
+                setOneMovie(res.data)
+                console.log(id)
             })
     }
     useEffect(getOneMovieData, [])
 
-    console.log(id)
+
 
     return (
 

@@ -16,7 +16,7 @@ const GlobalProvider = ({ children }) => {
         axios
             .get("http://localhost:3000/movies")
             .then((res) => {
-                console.log(res.data.items)
+                //console.log(res.data.items)
                 setMovieList(res.data.items)
                 setReviewList(res.data.items)
             })
