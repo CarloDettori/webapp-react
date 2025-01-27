@@ -1,8 +1,8 @@
 
 import axios from "axios"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { useState } from "react"
+
 export default function MoviePage() {
     const [oneMovie, setOneMovie] = useState([])
     const { id } = useParams()
@@ -14,16 +14,19 @@ export default function MoviePage() {
             .then((res) => {
                 //console.log(res.data.items)
                 setOneMovie(res.data.items)
+
             })
     }
     useEffect(getOneMovieData, [])
 
+    console.log(id)
+
     return (
 
-        <div className="col-2">
-
+        <div className="col-2 d-flex">
+            <img src={oneMovie.image} alt="" />
             <div className="card d-flex">
-                <img src={oneMovie.image} alt="" />
+
                 <div>
                     <h4>{oneMovie.title}</h4> <p>{oneMovie.release_year}</p>
                     <p>{oneMovie.director}</p>

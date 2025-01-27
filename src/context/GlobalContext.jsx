@@ -18,6 +18,7 @@ const GlobalProvider = ({ children }) => {
             .then((res) => {
                 console.log(res.data.items)
                 setMovieList(res.data.items)
+                setReviewList(res.data.items)
             })
     }
 
