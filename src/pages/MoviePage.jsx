@@ -13,10 +13,11 @@ export default function MoviePage() {
             .get(`http://localhost:3000/movies/${id}`)
             .then((res) => {
                 //console.log(res.data.items)
-                setOneMovie(res.data)
+                setOneMovie(res.data.item)
                 console.log(id)
             })
     }
+
     useEffect(getOneMovieData, [])
 
 

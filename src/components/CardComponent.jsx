@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function CardComponent({ data }) {
 
-
+    console.log(data)
 
     return (
 
@@ -13,7 +13,7 @@ export default function CardComponent({ data }) {
                 <div className="overlay">
                     <h4>{data.title}</h4> <p>{data.release_year}</p>
                     <p>{data.director}</p>
-                    <Link className="btn btn-primary link text-white" to="/{data.id}">Details</Link>
+                    <Link to={`http://localhost:5173/${data.id}`} className="btn btn-primary link text-white">Details</Link>
                 </div>
 
             </div>
