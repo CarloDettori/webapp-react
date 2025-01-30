@@ -9,6 +9,8 @@ const GlobalContext = createContext();
 const GlobalProvider = ({ children }) => {
     const [movieList, setMovieList] = useState([])
     const [reviewList, setReviewList] = useState([])
+    const [fakeMovieList, setFakeMovieList] = useState([]);
+
 
 
 
@@ -29,7 +31,7 @@ const GlobalProvider = ({ children }) => {
 
     return (
 
-        <GlobalContext.Provider value={{ movieList, reviewList }} >
+        <GlobalContext.Provider value={{ movieList, setMovieList, reviewList, setReviewList }} >
             {children}
         </GlobalContext.Provider>
 

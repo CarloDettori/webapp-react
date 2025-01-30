@@ -23,28 +23,24 @@ export default function MoviePage() {
 
 
     return (
-
-        <div className="col-2 d-flex">
-            <img src={oneMovie.image} alt="" />
-            <div className="card d-flex">
-
+        <main>
+            <div className="d-flex">
+                <div className="card d-flex">
+                    <img className="" src={oneMovie.image} alt="" />
+                </div>
                 <div>
-                    <h4>{oneMovie.title}</h4> <p>{oneMovie.release_year}</p>
-                    <p>{oneMovie.director}</p>
+                    <div className="px-5">
+                        <h4>{oneMovie.title}</h4>
 
-                    <p>{oneMovie.abstract}</p>
-                    <p>{oneMovie.genere}</p>
+                        <p>{oneMovie.director}</p>
+                        <p>{oneMovie.release_year}</p>
+
+                        <p>{oneMovie.abstract}</p>
+                        <p>{oneMovie.genere}</p>
+                    </div>
                 </div>
             </div>
 
-            {/* <div className="card" >
-                <img src="https://placehold.co/400x600/png" className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-            </div> */}
-        </div>
+        </main>
     )
 }

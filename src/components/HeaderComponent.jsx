@@ -1,6 +1,21 @@
 import { NavLink } from "react-router-dom";
+import { GlobalContext, GlobalProvider } from "../context/GlobalContext";
+import { useContext } from "react";
+import { useState, useEffect } from "react";
 
 export default function HeaderComponent() {
+    const { movieList, setMovieList, reviewList, setReviewList } = useContext(GlobalContext);
+    const [fakeMovieList, setFakeMovieList] = useState([]);
+    const [searchValue, setSearchValue] = useState([]);
+
+    function movieFilter() {
+
+        movieList.filter((el) => {
+
+        });
+
+    };
+
     return (
         <header className="bg-black">
             <nav className="navbar navbar-expand-lg bg-dark h-100">
